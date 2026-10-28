@@ -1,6 +1,8 @@
 # Uninstaller
 
-A small Mac app that finds everything an app left behind and removes it: the app, launch agents and daemons (what makes things start at login), privileged helpers, support files, preferences, containers, caches, logs, temp files, command-line tools, and installer receipts along with every file the installer put down.
+**Uninstaller for macOS.** Dragging an app to the Trash leaves a lot behind. Uninstaller scans your Mac for every leftover file an app scattered around and completely cleans up after it: the app itself, launch agents and daemons (what makes things start at login), privileged helpers, support files, preferences, containers, caches, logs, temp files, command-line tools, and installer receipts along with every file the installer put down. It works on apps you're about to remove and on apps you've already deleted.
+
+**[Download the latest release](https://github.com/dancoya/Uninstaller/releases/latest)** (macOS 27, Apple Silicon).
 
 ## Build
 
