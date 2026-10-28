@@ -1,2 +1,3 @@
-Light fill: linear #1B2A4A (top) -> #0B1322 (bottom)
-Dark fill:  linear #15151A (top) -> #050507 (bottom)
+Light fill: linear #2A2B30 (top) -> #17181B (bottom)
+Dark fill:  linear #1E1F23 (top) -> #0C0C0E (bottom)
+Gate: #ECEBE6   Pixels: #FF6A3D

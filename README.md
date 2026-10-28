@@ -41,20 +41,20 @@ System Settings → Privacy & Security:
 
 ## App icon
 
-Art deco icon in `Icon/` — gold bin with fluting and a chevron band, sunburst rays, stepped double frame.
+The icon is the kanji 間 (*ma*), "the space between". 間 is a gate 門 with the sun 日 inside it; here the gate stays and the sun dissolves into pixels that drift up and out behind it, leaving clean, empty space, which is what Uninstaller does for your Mac. Off-white gate and orange pixels on a charcoal plate.
 
 - `Icon/icns/` — `.icns` for light, dark and tinted. The build script ships the light one, so the app shows its icon in the Dock and Finder.
 - `Assets.xcassets/AppIcon.appiconset` — every macOS size plus iOS 1024 slots, with Dark and Tinted appearance variants already declared in `Contents.json`.
-- `Icon/source/` — the SVGs and 1024 px PNGs; `Icon/make_icons.py` regenerates everything.
+- `Icon/source/` — the SVGs and 1024 px PNGs; `Icon/make_icons.py` regenerates everything (`pip install cairosvg pillow`, then `python3 Icon/make_icons.py`, and `--layers` for the Icon Composer layers).
 
 ### Liquid Glass icon (Icon Composer)
 
-`Icon/icon-composer-layers/` has the design split into three transparent layers, ready for Apple's Icon Composer (ships with Xcode 26+, under Xcode → Open Developer Tool). About two minutes:
+`Icon/icon-composer-layers/` has the design split into two transparent layers, ready for Apple's Icon Composer (ships with Xcode 26+, under Xcode → Open Developer Tool). About two minutes:
 
 1. Open Icon Composer → New → macOS.
-2. Drag in `1-rays.png`, `2-frame.png`, `3-bin.png` in that order (bottom to top). Each becomes a layer.
+2. Drag in `1-pixels.png`, then `2-gate.png` (bottom to top). Each becomes a layer.
 3. Set the background to a gradient using the colors in `background-colors.txt`.
-4. Suggested per-layer settings: Rays — opacity 35 %, no glass. Frame — glass on, specular on. Bin — glass on, specular on, slight shadow. Icon Composer will preview Light, Dark, Clear and Tinted; tweak the Dark tab's background to the dark gradient.
+4. Suggested per-layer settings: Pixels — no glass, so the fade stays crisp. Gate — glass on, specular on, slight shadow. Icon Composer will preview Light, Dark, Clear and Tinted; tweak the Dark tab's background to the dark gradient.
 5. Save as `Uninstaller.icon` into this folder.
 
 To use it: the `.icon` file only compiles through Xcode, not the Swift package script. Make an Xcode project (File → New → Project → macOS App, bundle ID `com.dan.uninstaller`), add `Sources/Uninstaller`, delete the template's `ContentView.swift`/app file, drag `Uninstaller.icon` into the project, and set it as the App Icon in the target's General tab. Icon Composer can also export a flat `.icns` (File → Export) if you want to update `Icon/icns/` for the script build.

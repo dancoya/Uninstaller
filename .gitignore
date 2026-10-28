@@ -11,3 +11,4 @@ DerivedData/
 # Built app (regenerate with ./build-app.sh)
 Uninstaller.app/
 release/
+Icon/build/
