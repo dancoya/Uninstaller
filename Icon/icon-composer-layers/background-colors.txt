@@ -1,0 +1,2 @@
+Light fill: linear #1B2A4A (top) -> #0B1322 (bottom)
+Dark fill:  linear #15151A (top) -> #050507 (bottom)
